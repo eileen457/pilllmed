@@ -139,7 +139,7 @@
             // 
             // txtEnf
             // 
-            this.txtEnf.Location = new System.Drawing.Point(494, 153);
+            this.txtEnf.Location = new System.Drawing.Point(500, 154);
             this.txtEnf.Multiline = true;
             this.txtEnf.Name = "txtEnf";
             this.txtEnf.Size = new System.Drawing.Size(155, 27);
@@ -147,7 +147,7 @@
             // 
             // txtAle
             // 
-            this.txtAle.Location = new System.Drawing.Point(474, 199);
+            this.txtAle.Location = new System.Drawing.Point(486, 199);
             this.txtAle.Multiline = true;
             this.txtAle.Name = "txtAle";
             this.txtAle.Size = new System.Drawing.Size(155, 30);
@@ -155,10 +155,10 @@
             // 
             // txtMed
             // 
-            this.txtMed.Location = new System.Drawing.Point(475, 247);
+            this.txtMed.Location = new System.Drawing.Point(486, 247);
             this.txtMed.Multiline = true;
             this.txtMed.Name = "txtMed";
-            this.txtMed.Size = new System.Drawing.Size(161, 52);
+            this.txtMed.Size = new System.Drawing.Size(138, 56);
             this.txtMed.TabIndex = 10;
             // 
             // label1
@@ -282,7 +282,7 @@
             // 
             // txtDia
             // 
-            this.txtDia.Location = new System.Drawing.Point(474, 309);
+            this.txtDia.Location = new System.Drawing.Point(486, 308);
             this.txtDia.Multiline = true;
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(191, 52);
@@ -300,7 +300,7 @@
             // 
             this.btnBuscmed.BackColor = System.Drawing.Color.LightPink;
             this.btnBuscmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscmed.Location = new System.Drawing.Point(647, 238);
+            this.btnBuscmed.Location = new System.Drawing.Point(656, 238);
             this.btnBuscmed.Name = "btnBuscmed";
             this.btnBuscmed.Size = new System.Drawing.Size(178, 67);
             this.btnBuscmed.TabIndex = 29;
@@ -337,10 +337,10 @@
             // 
             // txtDosis
             // 
-            this.txtDosis.Location = new System.Drawing.Point(486, 58);
+            this.txtDosis.Location = new System.Drawing.Point(500, 50);
             this.txtDosis.Multiline = true;
             this.txtDosis.Name = "txtDosis";
-            this.txtDosis.Size = new System.Drawing.Size(155, 27);
+            this.txtDosis.Size = new System.Drawing.Size(75, 41);
             this.txtDosis.TabIndex = 55;
             // 
             // label13

@@ -19,12 +19,12 @@ namespace ver
     public partial class Form5 : Form
     {
         private Conexion mConexion; //objeto de clase conexion
-        public Form5(string dosis)
+        public Form5()
         {
             InitializeComponent();
             mConexion = new Conexion();
 
-            txtDosis.Text = dosis;
+
             txtDosis.Enabled = false;
 
         }
@@ -38,6 +38,7 @@ namespace ver
             alarmMinute = comboBox2.Text;
             MessageBox.Show("Ya se establecio la alarma");
             //clic start para establecer alarma
+            button1_Click(sender, e);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace ver
 
 
             String nom = txtNombre.Text;
-            String dosis = txtDosis.Text;
+            String dosisp = txtDosis.Text;
 
             SqlConnection connection = mConexion.getConexion();
             connection.Open();
@@ -77,14 +78,28 @@ namespace ver
 
 
             //CREO QUE ME FALTA UN IF ANTES DEL QUERY
-            string query = " EXEC SP_RestarPastilla";
-          //  string query = " UPDATE Usuarios SET Pastillas = Pastillas - @dosis WHERE Nombre = @nombre AND CuentaID = @cuentaId;";
+            string query = "SP_RestarPastilla";
+          
             SqlCommand comando = new SqlCommand(query, connection);
-            comando.ExecuteNonQuery();
+            comando.CommandType = CommandType.StoredProcedure;
 
-            comando.Parameters.AddWithValue("@dosis", dosis);
-            comando.Parameters.AddWithValue("@nombre", nom);
-            comando.Parameters.AddWithValue("@cuentaId", cuentaId);
+
+            comando.Parameters.Add("@pastillas", SqlDbType.Int);
+            comando.Parameters.Add("@nombre", SqlDbType.NVarChar,100);
+            comando.Parameters.Add("@cuentaId", SqlDbType.Int);
+
+            comando.Parameters["@pastillas"].Value= dosisp;
+            comando.Parameters["@nombre"].Value = nom;
+            comando.Parameters["@cuentaId"].Value = cuentaId;
+            SqlDataReader sqlDataReader = comando.ExecuteReader();
+
+
+
+            connection.Close();
+
+           // Console.ReadLine();
+
+            button1_Click(sender, e);
 
         }
 
@@ -98,7 +113,7 @@ namespace ver
         {
 
             String nom = txtNombre.Text;
-            String dosis = txtDosis.Text;
+
 
             SqlConnection connection = mConexion.getConexion();
             connection.Open();
@@ -114,7 +129,9 @@ namespace ver
 
 
             string sql =
-           "SELECT  Nombre = @nombre, Dosis=@dosis FROM Usuarios WHERE CuentaID = @cuentaId AND Nombre = @nombre";   //REVISAR LO DEL NUMERO CREO QUE ES NOMBRE
+           "SELECT Nombre, Pastillas FROM Usuarios WHERE CuentaID = @cuentaId AND Nombre = @nombre";   //REVISAR LO DEL NUMERO CREO QUE ES NOMBRE
+
+
 
             SqlDataReader reader = null;
 
@@ -124,7 +141,7 @@ namespace ver
                 SqlCommand comando = new SqlCommand(sql, connection);
 
                 comando.Parameters.AddWithValue("@nombre", nom);
-                comando.Parameters.AddWithValue("@dosis", dosis);
+                comando.Parameters.AddWithValue("@cuentaId", cuentaId);
 
                 reader = comando.ExecuteReader();
 
@@ -132,8 +149,8 @@ namespace ver
                 {
                     while (reader.Read())
                     {
-                        txtNombre.Text = reader.GetString(1);
-                        txtDosis.Text = reader.GetInt32(2).ToString();
+                        txtNombre.Text = reader.GetString(0);
+                        txtDosis.Text = reader.GetInt32(1).ToString();
 
                     }
                 } else

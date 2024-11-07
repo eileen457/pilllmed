@@ -58,18 +58,20 @@ namespace ver
             String enfermedad=txtEnf.Text;
             String alergias = txtAle.Text;
                                                 // String pastillas = txtCant.Text;
-          //  String med = txtMed.Text;    asignado en la biblioteca de medicinas
+           String be = txtMed.Text;   // asignado en la biblioteca de medicinas
             String dia=txtDia.Text;
             int pastillas;
+            int dosis;
             int edad;
             try
             {
                pastillas = int.Parse(txtCant.Text);
                edad=int.Parse(txtEdad.Text);
+                dosis = int.Parse(txtDosis.Text);
             }
             catch (FormatException)
             {
-                MessageBox.Show("Error: Pastillas y edad tiene que ser un número");
+                MessageBox.Show("Error: Pastillas, edad y dosis tiene que ser numerico");
                 return;
             }
 
@@ -105,8 +107,8 @@ namespace ver
                 // Convertir la imagen a un string hexadecimal para incluirla en la consulta
                 string imagen = BitConverter.ToString(aByte).Replace("-", "");
 
-                string sql = "INSERT INTO Usuarios ( Numero, Nombre, Peso, Edad, Sexo, Tipo_sangre, Enfermedades, Alergias, Pastillas, Medicamento, Dia, Foto, CuentaID) VALUES" +
-                " ('" + numero + "','" + usuario + "','" + peso + "', '" + edad + "', '" + s + "', '" + sangre + "', '" + enfermedad + "', '" + alergias + "','" + pastillas + "', @hola , '" + dia + "',  0x" + imagen + "," + cuentaId + ") ;"; 
+                string sql = "INSERT INTO Usuarios ( Numero, Nombre, Peso, Edad, Sexo, Tipo_sangre, Enfermedades, Alergias, Pastillas, Dosis, Medicamento, Dia, Foto, CuentaID) VALUES" +
+                " ('" + numero + "','" + usuario + "','" + peso + "', '" + edad + "', '" + s + "', '" + sangre + "', '" + enfermedad + "', '" + alergias + "','" + pastillas + "','" + dosis +"','" + be + "' , '" + dia + "',  0x" + imagen + "," + cuentaId + ") ;"; 
 
                 
                 try
@@ -115,7 +117,7 @@ namespace ver
                     SqlCommand comando = new SqlCommand(sql, connection);
                     comando.ExecuteNonQuery();
 
-                       comando.Parameters.AddWithValue("@hola", txtMed.Text);
+                     //  comando.Parameters.AddWithValue("@hola", txtMed.Text);
           
 
                     MessageBox.Show("Registro guardado");

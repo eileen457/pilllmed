@@ -135,7 +135,7 @@ namespace ver
                             form3.Show();  //mostrar siguiente interfaz
                             this.Hide();   //se esconde una interfaz y aparece otra
 
-                            Form5 form5 = new Form5("");  //llamar el siguiente form
+                            Form5 form5 = new Form5();  //llamar el siguiente form
                             form5.Show();
                         }
                     }
