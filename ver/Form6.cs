@@ -60,6 +60,8 @@ namespace ver
             String dia = txtDia.Text;
 
             int pastillas;
+            int dosis;
+
             pastillas = int.Parse(txtCant.Text);
 
             if (pastillas < 5)
@@ -68,8 +70,21 @@ namespace ver
                 return;
             }
 
-            //hereda de la clase donde se guarda el nombre del correo
-            string correo = DatosUsuario.CorreoUsuarioActual;
+
+
+                try
+                {
+                    dosis = int.Parse(txtDosis.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Error: Dosis tiene que ser numerico");
+                    return;
+                }
+
+
+                //hereda de la clase donde se guarda el nombre del correo
+                string correo = DatosUsuario.CorreoUsuarioActual;
             // Reutilizar el correo que se guardó al iniciar sesión
             string sqlCorreo = "SELECT CuentaID FROM Cuenta WHERE Correo = '" + correo + "'";
             SqlCommand comandoCorreo = new SqlCommand(sqlCorreo, connection);
@@ -85,7 +100,7 @@ namespace ver
             string sql =
             "UPDATE Usuarios SET Nombre = @nombre, Peso = @peso, Edad = @edad, Sexo = @sexo, " +
             "Tipo_sangre = @sangre, Enfermedades = @enfermedad, Alergias = @alergias, Medicamento = @medicamento, " +
-            "Pastillas = @pastillas, Dia = @dia, Foto = @foto WHERE CuentaID = @cuentaId AND Numero = @numero";
+            "Pastillas = @pastillas, Dosis=@dosis, Dia = @dia, Foto = @foto WHERE CuentaID = @cuentaId AND Numero = @numero";
 
             SqlCommand comando = new SqlCommand(sql, connection);
 
@@ -99,7 +114,8 @@ namespace ver
             comando.Parameters.AddWithValue("@alergias", alergias);
             comando.Parameters.AddWithValue("@medicamento", med);
             comando.Parameters.AddWithValue("@pastillas", pastillas);
-            comando.Parameters.AddWithValue("@dia", dia);
+                comando.Parameters.AddWithValue("@dosis", dosis);
+                comando.Parameters.AddWithValue("@dia", dia);
            // comando.Parameters.AddWithValue("@foto", aByte);  // Aquí pasamos los bytes de la imagen
             comando.Parameters.AddWithValue("@cuentaId", cuentaId);
             comando.Parameters.AddWithValue("@numero", numero);

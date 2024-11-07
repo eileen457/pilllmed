@@ -226,7 +226,7 @@
             // 
             this.btnReloj.BackColor = System.Drawing.Color.LightPink;
             this.btnReloj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReloj.Location = new System.Drawing.Point(93, 257);
+            this.btnReloj.Location = new System.Drawing.Point(119, 257);
             this.btnReloj.Name = "btnReloj";
             this.btnReloj.Size = new System.Drawing.Size(113, 39);
             this.btnReloj.TabIndex = 33;
@@ -252,7 +252,7 @@
             // 
             this.btnStop.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.Location = new System.Drawing.Point(253, 257);
+            this.btnStop.Location = new System.Drawing.Point(279, 257);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(113, 39);
             this.btnStop.TabIndex = 47;
@@ -291,12 +291,13 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightCoral;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(363, 332);
+            this.button1.Location = new System.Drawing.Point(377, 331);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(74, 27);
+            this.button1.Size = new System.Drawing.Size(79, 36);
             this.button1.TabIndex = 57;
             this.button1.Text = "Ver";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // axWindowsMediaPlayer1

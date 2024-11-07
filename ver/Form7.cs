@@ -54,7 +54,7 @@ namespace ver
             while (reader.Read())
             {
                 dataGridView1.Rows.Add(reader["Numero"], reader["Foto"], reader["Nombre"], reader["Peso"], reader["Edad"], reader["Sexo"], reader["Tipo_sangre"]
-                    , reader["Enfermedades"], reader["Alergias"], reader["Pastillas"], reader["Medicamento"], reader["Dia"]);
+                    , reader["Enfermedades"], reader["Alergias"], reader["Pastillas"], reader["Dosis"], reader["Medicamento"], reader["Dia"]);
             }
 
             connection.Close();
