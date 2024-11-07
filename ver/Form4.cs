@@ -42,7 +42,7 @@ namespace ver
         }                                  //si hay numero devuelve true
         private void btnCambios_Click(object sender, EventArgs e)
         {
-            
+            String Dosis=txtDosis.Text;   //NUEVO PARA dosis
 
             MemoryStream ms=new MemoryStream();
             pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

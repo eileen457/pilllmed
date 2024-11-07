@@ -32,7 +32,7 @@ namespace ver
             connection.Open();
 
 
-            String c="";   //REVISAR ESTA MEXICANADA  CELDAS TIENEN QUE ESTAR INTACTAS O VACIAS
+            String c="";   
                 Form4 form4 = new Form4(c);  //llamar el siguiente form
                 form4.Show();  //mostrar siguiente interfaz
                 this.Hide();   //se esconde una interfaz y aparece otra
@@ -46,33 +46,73 @@ namespace ver
             SqlConnection connection = mConexion.getConexion();
             connection.Open();
 
-
+            //boton editar
             if (e.ColumnIndex == 3 && e.RowIndex > -1)
             {                    //accede a la fila elegida        //obtiene el valor de la primera fila 0                   
                 string valor = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                Form6 form6 = new Form6(valor,"");  
+
+                Form6 form6 = new Form6(valor, "");  
                 form6.Show();
                 this.Hide();
                
             }
-            else if (e.ColumnIndex == 4 && e.RowIndex > -1) {
-                string valor = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            else if (e.ColumnIndex == 4 && e.RowIndex > -1) {  //boton eliminar
+                string v = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+
 
                 DialogResult opcion1 = MessageBox.Show("¿Desea eliminar este registro?", "Advertencia de actualizacion", MessageBoxButtons.YesNo);
                 if (opcion1 == DialogResult.Yes)
                 {
-                    string sql = "DELETE FROM Usuarios WHERE UsuarioID = " + valor;
-                    SqlCommand comando = new SqlCommand(sql, connection);
-                    comando.ExecuteNonQuery();
-                
-                   // comando.Parameters.AddWithValue("@id", valor);
-                    MessageBox.Show("Se elimino de forma exitosa");
-                
+                    try
+                    {
+
+                        //hereda de la clase donde esta el nombre de la cuenta
+                        string correo = DatosUsuario.CorreoUsuarioActual;
+                        // Reutilizar la cuenta que se guardó al iniciar sesión
+                        string sqlCorreo = "SELECT CuentaID FROM Cuenta WHERE Correo = '" + correo + "'";
+                        SqlCommand comandoCorreo = new SqlCommand(sqlCorreo, connection);
+
+            //flexible a cualquier tipo de dato              //devuelve valor unico tipo objeto
+                        object cuentaIdObj = comandoCorreo.ExecuteScalar();   //si sabe en que cuenta estoy
+                        int cuentaId = (int)cuentaIdObj;
+
+                        string sql = "DELETE FROM Usuarios WHERE Numero = @numero AND CuentaID = @cuentaId";
+                        SqlCommand comando = new SqlCommand(sql, connection);
+                   
+
+                        comando.Parameters.AddWithValue("@Numero", v); 
+                        comando.Parameters.AddWithValue("@cuentaId", cuentaId);
+
+
+                        // Ejecutamos la consulta
+                        int filasAfectadas = comando.ExecuteNonQuery();
+
+                        if (filasAfectadas > 0)
+                        {
+                            
+                            MessageBox.Show("Se eliminó de forma exitosa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el usuario a eliminar.");
+                        }
+                      //  MessageBox.Show("Se elimino de forma exitosa");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar el usuario: " + ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+
                 }
                 else if (opcion1 == DialogResult.No)
                 {
                     MessageBox.Show("Eliminar cancelado");
                 }
+                
             }
         }
 

@@ -55,6 +55,9 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnBuscmed = new System.Windows.Forms.Button();
             this.txtSangre = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDosis = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,32 +74,34 @@
             // 
             // btnFoto
             // 
+            this.btnFoto.BackColor = System.Drawing.Color.LightPink;
             this.btnFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFoto.Location = new System.Drawing.Point(845, 327);
             this.btnFoto.Name = "btnFoto";
             this.btnFoto.Size = new System.Drawing.Size(220, 34);
             this.btnFoto.TabIndex = 2;
             this.btnFoto.Text = "Foto";
-            this.btnFoto.UseVisualStyleBackColor = true;
+            this.btnFoto.UseVisualStyleBackColor = false;
             this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
             // 
             // btnCambios
             // 
+            this.btnCambios.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambios.Location = new System.Drawing.Point(421, 385);
             this.btnCambios.Name = "btnCambios";
             this.btnCambios.Size = new System.Drawing.Size(220, 34);
             this.btnCambios.TabIndex = 3;
             this.btnCambios.Text = "Guardar";
-            this.btnCambios.UseVisualStyleBackColor = true;
+            this.btnCambios.UseVisualStyleBackColor = false;
             this.btnCambios.Click += new System.EventHandler(this.btnCambios_Click);
             // 
             // txtCant
             // 
-            this.txtCant.Location = new System.Drawing.Point(230, 23);
+            this.txtCant.Location = new System.Drawing.Point(219, 50);
             this.txtCant.Multiline = true;
             this.txtCant.Name = "txtCant";
-            this.txtCant.Size = new System.Drawing.Size(183, 39);
+            this.txtCant.Size = new System.Drawing.Size(86, 39);
             this.txtCant.TabIndex = 4;
             this.txtCant.TextChanged += new System.EventHandler(this.txtCant_TextChanged);
             // 
@@ -170,7 +175,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 29);
+            this.label2.Location = new System.Drawing.Point(12, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 20);
             this.label2.TabIndex = 15;
@@ -285,7 +290,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(516, 40);
+            this.txtId.Location = new System.Drawing.Point(647, 12);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 28;
@@ -293,13 +298,14 @@
             // 
             // btnBuscmed
             // 
+            this.btnBuscmed.BackColor = System.Drawing.Color.LightPink;
             this.btnBuscmed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscmed.Location = new System.Drawing.Point(647, 238);
             this.btnBuscmed.Name = "btnBuscmed";
             this.btnBuscmed.Size = new System.Drawing.Size(178, 67);
             this.btnBuscmed.TabIndex = 29;
             this.btnBuscmed.Text = "Agregar medicamento";
-            this.btnBuscmed.UseVisualStyleBackColor = true;
+            this.btnBuscmed.UseVisualStyleBackColor = false;
             this.btnBuscmed.Click += new System.EventHandler(this.btnBuscmed_Click);
             // 
             // txtSangre
@@ -319,11 +325,44 @@
             this.txtSangre.Size = new System.Drawing.Size(121, 24);
             this.txtSangre.TabIndex = 53;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(338, 58);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(132, 20);
+            this.label12.TabIndex = 54;
+            this.label12.Text = "Cuantas tomar";
+            // 
+            // txtDosis
+            // 
+            this.txtDosis.Location = new System.Drawing.Point(486, 58);
+            this.txtDosis.Multiline = true;
+            this.txtDosis.Name = "txtDosis";
+            this.txtDosis.Size = new System.Drawing.Size(155, 27);
+            this.txtDosis.TabIndex = 55;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label13.Location = new System.Drawing.Point(12, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(426, 20);
+            this.label13.TabIndex = 56;
+            this.label13.Text = "*Se recomienda agregar primero el medicamento*";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1090, 443);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtDosis);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.txtSangre);
             this.Controls.Add(this.btnBuscmed);
             this.Controls.Add(this.txtId);
@@ -352,7 +391,7 @@
             this.Controls.Add(this.btnFoto);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "Guarde los datos del usuario";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,5 +427,8 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnBuscmed;
         private System.Windows.Forms.ComboBox txtSangre;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtDosis;
+        private System.Windows.Forms.Label label13;
     }
 }

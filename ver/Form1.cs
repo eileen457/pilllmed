@@ -29,6 +29,8 @@ namespace ver
         }
       
 
+        /*
+
         //verifica si el registro ya existe antes de guardar
         private bool RegistroEsta(SqlConnection connection, string usuario) //private no todos lo pueden usar     conectado a la base de datos busca en fila codigo
         {
@@ -38,10 +40,12 @@ namespace ver
             int count = Convert.ToInt32(cmd.ExecuteScalar()); //execute devuelve en numeros lo que el objeto cmd encuentre
             return count > 0; //si es uno entonces ya existe si es cero no existe
 
-        }
-
+        }                       */
+                           
         private void button1_Click(object sender, EventArgs e)
         {
+
+            /*
             //declarar variables tipo string
             String usuario = txtUsuario.Text;
             String contraseña = txtContraseña.Text;
@@ -77,17 +81,17 @@ namespace ver
             {
 
                 MessageBox.Show("Error: " + ex.Message);
-            }
-            finally { connection.Close(); }
+            }  
+            finally { connection.Close(); }   */
 
             
            
         }
         private void button2_Click(object sender, EventArgs e)
-        {
+        {  /*
             Form2 form2 = new Form2();  //llamar el siguiente form
             form2.Show();  //mostrar siguiente interfaz
-            this.Hide();   //se esconde una interfaz y aparece otra
+            this.Hide();   //se esconde una interfaz y aparece otra     */
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -131,7 +135,7 @@ namespace ver
                             form3.Show();  //mostrar siguiente interfaz
                             this.Hide();   //se esconde una interfaz y aparece otra
 
-                            Form5 form5 = new Form5();  //llamar el siguiente form
+                            Form5 form5 = new Form5("");  //llamar el siguiente form
                             form5.Show();
                         }
                     }
@@ -152,6 +156,19 @@ namespace ver
                 reader.Close();   //cerrar lector
                 connection.Close();
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form10 form10 = new Form10();  //llamar el siguiente form
+            form10.Show();  //mostrar siguiente interfaz
+            this.Hide();   //se esconde una interfaz y aparece otra
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 

@@ -28,3 +28,4 @@ C:\Users\eilee\Downloads\visual studio mio\ver\obj\Debug\ver.Form1.resources
 C:\Users\eilee\Downloads\visual studio mio\ver\obj\Debug\ver.Form7.resources
 C:\Users\eilee\Downloads\visual studio mio\ver\obj\Debug\ver.Form8.resources
 C:\Users\eilee\Downloads\visual studio mio\ver\obj\Debug\ver.Form9.resources
+C:\Users\eilee\Downloads\visual studio mio\ver\obj\Debug\ver.Form10.resources

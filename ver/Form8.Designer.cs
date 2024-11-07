@@ -49,17 +49,19 @@
             // 
             // btnM
             // 
+            this.btnM.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnM.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnM.Location = new System.Drawing.Point(476, 60);
             this.btnM.Name = "btnM";
             this.btnM.Size = new System.Drawing.Size(131, 37);
             this.btnM.TabIndex = 30;
             this.btnM.Text = "Search";
-            this.btnM.UseVisualStyleBackColor = true;
+            this.btnM.UseVisualStyleBackColor = false;
             this.btnM.Click += new System.EventHandler(this.btnM_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1});
@@ -79,35 +81,38 @@
             // 
             // btnV
             // 
+            this.btnV.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnV.Location = new System.Drawing.Point(323, 374);
             this.btnV.Name = "btnV";
             this.btnV.Size = new System.Drawing.Size(131, 37);
             this.btnV.TabIndex = 32;
             this.btnV.Text = "Volver";
-            this.btnV.UseVisualStyleBackColor = true;
+            this.btnV.UseVisualStyleBackColor = false;
             this.btnV.Click += new System.EventHandler(this.btnV_Click);
             // 
             // btnA
             // 
+            this.btnA.BackColor = System.Drawing.Color.LightCoral;
             this.btnA.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnA.Location = new System.Drawing.Point(631, 374);
             this.btnA.Name = "btnA";
             this.btnA.Size = new System.Drawing.Size(131, 37);
             this.btnA.TabIndex = 33;
             this.btnA.Text = "Agregar";
-            this.btnA.UseVisualStyleBackColor = true;
+            this.btnA.UseVisualStyleBackColor = false;
             this.btnA.Click += new System.EventHandler(this.btnA_Click);
             // 
             // btnD
             // 
+            this.btnD.BackColor = System.Drawing.Color.LightPink;
             this.btnD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnD.Location = new System.Drawing.Point(476, 374);
             this.btnD.Name = "btnD";
             this.btnD.Size = new System.Drawing.Size(149, 37);
             this.btnD.TabIndex = 34;
             this.btnD.Text = "Descripcion";
-            this.btnD.UseVisualStyleBackColor = true;
+            this.btnD.UseVisualStyleBackColor = false;
             this.btnD.Click += new System.EventHandler(this.btnD_Click);
             // 
             // txtNumero
@@ -123,6 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.btnD);
@@ -132,7 +138,7 @@
             this.Controls.Add(this.btnM);
             this.Controls.Add(this.txtB);
             this.Name = "Form8";
-            this.Text = "Form8";
+            this.Text = "Busqueda de medicamentos";
             this.Load += new System.EventHandler(this.Form8_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
